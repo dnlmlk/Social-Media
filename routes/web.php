@@ -18,7 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('main');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function ()
+{
+    Route::resource('profile', \App\Http\Controllers\EditProfileController::class)->only(['update', 'index']);
+
+    Route::resource('post', \App\Http\Controllers\PostController::class)->middleware(['admin']);
+});
 
 require __DIR__.'/auth.php';
