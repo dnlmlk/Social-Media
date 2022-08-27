@@ -15,7 +15,7 @@ class EditProfileController extends Controller
      */
     public function index()
     {
-        $user = User::find(auth()->user()->id)->first();
+        $user = User::find(auth()->user()->id);
         return view('editProfile', ['user' => $user]);
     }
 
@@ -39,7 +39,7 @@ class EditProfileController extends Controller
             $request->file('profileImage')->move(public_path('profileImages/'), $fileName);
         }
 
-        $user = User::find($id)->first();
+        $user = User::find($id);
 
         is_null($request->name) ? null : $user->name = $request->name ;
         is_null($request->email) ? null : $user->email = $request->email;

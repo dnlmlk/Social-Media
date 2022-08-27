@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
-        
+
 
         return redirect()->route('root')->with(['registered' => 'You registered successfully, for login admin must accept your account']);
     }

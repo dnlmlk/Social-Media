@@ -4,6 +4,24 @@ body{
     margin-top:20px;
 }
 
+.like-hover:hover{
+    color: red;
+}
+
+.save-hover:hover{
+    color: dodgerblue;
+}
+
+.save-error{
+    position: fixed;
+    z-index: 3;
+    left: 30px;
+}
+
+.remove-post:hover{
+    color: red;
+}
+
 .profile-page .profile-header {
     box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
     border: 1px solid #f2f4f9;

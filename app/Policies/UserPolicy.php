@@ -36,6 +36,15 @@ class UserPolicy
         return \Illuminate\Auth\Access\Response::deny();
     }
 
+
+    public function save(User $user, User $model)
+    {
+        if (auth()->user()->role == 'Golden User') return \Illuminate\Auth\Access\Response::allow();
+
+        return \Illuminate\Auth\Access\Response::deny('You haven\'t access to save a post!!');
+
+    }
+
     /**
      * Determine whether the user can create models.
      *

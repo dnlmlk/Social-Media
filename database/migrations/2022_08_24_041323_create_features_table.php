@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Post::class)->constrained()->cascadeOnDelete();
             $table->string('message')->nullable();
-            $table->boolean('liked')->default(false);
+            $table->boolean('is_liked')->default(false);
+            $table->boolean('is_saved')->default(false);
             $table->timestamps();
         });
     }

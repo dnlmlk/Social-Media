@@ -10,8 +10,11 @@ class Feature extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'post_id',
         'message',
-        'liked'
+        'is_liked',
+        'is_saved',
     ];
 
     public function user()
