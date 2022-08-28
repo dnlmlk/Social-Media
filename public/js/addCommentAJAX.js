@@ -16,7 +16,12 @@ $(document).ready(function (){
                 },
                 success: function(response){ // What to do if we succeed
                     console.log(response)
-                    $(`#comment-card${postId}`).html(response);
+
+                    if (response['message'] == 'error'){
+                        $(`#save-error`).html(response['view']);
+                    }
+                    else
+                        $(`#comment-card${postId}`).html(response);
                 }
             });
 
