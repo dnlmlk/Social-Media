@@ -21,7 +21,6 @@ return new class extends Migration
             $table->boolean('is_accepted')->default(false);
             $table->string('image_path')->nullable()->default('profileImages/default.jpg');
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

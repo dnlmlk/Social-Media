@@ -74,7 +74,7 @@
 
                     <form method="get">
 
-                        <input type="hidden" id="lastID" name="lastID" value="{{ \App\Models\Post::all()->sortByDesc('id')->first()->id }}">
+                        <input type="hidden" id="lastID" name="lastID" value="{{ \App\Models\Post::all()->sortByDesc('id')->first()?->id }}">
 
                         @foreach($posts as $post)
                             <div id="post-card{{ $post->id }}" class="col-md-12 grid-margin">

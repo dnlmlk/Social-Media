@@ -119,8 +119,7 @@
                                                 <img class="img-xs rounded-circle" src="{{ asset($post->user->image_path) }}" alt="">
                                                 <div class="ml-2">
                                                     <p>{{ $post->user->name }}</p>
-                                                    @php($time = \Carbon\Carbon::now())
-                                                    <p class="tx-11 text-muted">{{ $time->diffInMinutes(\Carbon\Carbon::create($post->created_at)) }} minutes ago</p>
+                                                    <p class="tx-11 text-muted">{{ $post->created_at->isoFormat('D/M/Y , H:m') }}</p>
                                                 </div>
                                             </div>
                                         </div>

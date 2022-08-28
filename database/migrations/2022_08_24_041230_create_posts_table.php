@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnDelete();
-            $table->string('content');
+            $table->text('content');
             $table->string('image_path')->default('postImages/default.jpg');
             $table->integer('likes')->default(0);
             $table->timestamps();
