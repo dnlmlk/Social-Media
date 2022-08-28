@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function ()
     Route::get('save', [\App\Http\Controllers\SavedPostsController::class, 'index'])->name('save.index')->middleware('golden_user');
     Route::get('save/ajax/save', [\App\Http\Controllers\SavedPostsController::class, 'save']);
     Route::get('save/ajax/delete', [\App\Http\Controllers\SavedPostsController::class, 'delete'])->middleware('golden_user');
+
+    Route::get('comment/ajax/comment', [\App\Http\Controllers\CommentController::class, 'add']);
 });
 
 require __DIR__.'/auth.php';
